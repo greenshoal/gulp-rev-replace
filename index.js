@@ -51,6 +51,7 @@ function plugin(options) {
 
     cb();
   }, function replaceInFiles(cb) {
+	
     var stream = this;
 
     if (options.manifest) {
@@ -77,11 +78,17 @@ function plugin(options) {
       // files and push them through.
       cache.forEach(function replaceInFile(file) {
         var contents = file.contents.toString();
-
+		let fileDirName = path.dirname(file.relative);
         renames.forEach(function replaceOnce(rename) {
           var unreved = options.modifyUnreved ? options.modifyUnreved(rename.unreved) : rename.unreved;
           var reved = options.modifyReved ? options.modifyReved(rename.reved) : rename.reved;
           contents = contents.split(unreved).join(reved);
+		  
+		  //Resolve relative path
+		  var relativeUnreved = path.relative(fileDirName, unreved);
+		  var relativeReved = path.relative(fileDirName, reved);
+		  contents = contents.split(relativeUnreved).join(relativeReved);
+		  
           if (options.prefix) {
             contents = contents.split('/' + options.prefix).join(options.prefix + '/');
           }

@@ -1,9 +1,9 @@
 {
-  "name": "gulp-rev-replace",
-  "version": "0.4.3",
-  "description": "Rewrite occurences of filenames which have been renamed by gulp-rev",
+  "name": "gulp-rev-4replace",
+  "version": "0.0.1",
+  "description": "fork from jamesknelson/gulp-rev-replace",
   "main": "index.js",
-  "repository": "jamesknelson/gulp-rev-replace",
+  "repository": "greenshoal/gulp-rev-replace",
   "scripts": {
     "test": "mocha"
   },
@@ -16,9 +16,8 @@
     "asset"
   ],
   "author": {
-    "name": "James K Nelson",
-    "email": "james@numbattech.com",
-    "url": "http://jamesknelson.com"
+    "name": "LI Senlin",
+    "email": "green_shoal@163.com"
   },
   "engines": {
     "node": ">=0.10.0"
