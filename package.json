@@ -1,6 +1,6 @@
 {
   "name": "gulp-rev-4replace",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "fork from jamesknelson/gulp-rev-replace",
   "main": "index.js",
   "repository": "greenshoal/gulp-rev-replace",

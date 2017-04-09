@@ -66,6 +66,15 @@ function plugin(options) {
         });
       });
       options.manifest.on('end', replaceContents);
+    }else if (options.jsonifest) {
+		//get manifest from mem
+		Object.keys(options.jsonifest).forEach(function (srcFile) {
+		  renames.push({
+			unreved: canonicalizeUri(srcFile),
+			reved: options.prefix + canonicalizeUri(options.jsonifest[srcFile])
+		  });
+		});
+		replaceContents();
     }
     else {
       replaceContents();
